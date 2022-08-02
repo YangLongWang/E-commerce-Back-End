@@ -86,6 +86,7 @@ router.post('/', (req, res) => {
     product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
+    // tagIds: 
     category_id: req.body.category_id
   })
     .then((product) => {
@@ -113,6 +114,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
+    individualHooks: true,
     where: {
       id: req.params.id,
     },
@@ -146,7 +148,7 @@ router.put('/:id', (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
