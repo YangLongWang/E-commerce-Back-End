@@ -90,7 +90,3 @@ Tag.belongsToMany(Product, {
 ## Author
 
 - Github - [Longyang Wang](https://github.com/YangLongWang)
-
-categories: 
-tags:  
-products: 
